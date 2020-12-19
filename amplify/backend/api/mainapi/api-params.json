@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/hands",
+            "lambdaFunction": "handsfunction",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/hands"
+        }
+    ],
+    "resourceName": "mainapi",
+    "apiName": "mainapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "handsfunction"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-mutations-dev-124737-authRole",
+        "unAuthRoleName": "amplify-mutations-dev-124737-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "handsfunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
