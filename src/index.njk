@@ -3,4 +3,39 @@ title: mutations
 layout: base
 ---
 
-<h1>test</h1>
+<h1>test</h1>i
+<form>
+
+    <label for="input">Input</label>
+    <input type="file" accept="image/japeg" id="input" name="input">
+</form>
+<p id="placeholder"></p>
+<script>
+    const form = new FormData()
+    const input = document.querySelector('#input')
+    input.addEventListener('change', (event) => {
+    
+    })
+
+    async function getHandCount(){ 
+    const placeholder = document.getElementById('placeholder')
+    const result = await fetch('https://handcount.hasura.app/v1/graphql',{
+    method: 'POST',
+    headers: {
+    'Content-Type' : 'application/json'
+    },
+    body: JSON.stringify({
+    query:`query MyQuery {
+  handcount {
+    hands
+  }
+}
+`,
+    variables: {}
+    })
+    }).then(res => res.json())
+    const counts = result.data.handcount[0].hands
+    placeholder.innerHTML = `<span>${counts} and counting</span>`
+    }
+getHandCount()
+</script>
