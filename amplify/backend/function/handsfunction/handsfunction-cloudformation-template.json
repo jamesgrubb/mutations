@@ -69,7 +69,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-mutations-dev-124737-deployment",
-          "S3Key": "amplify-builds/handsfunction-306d654b505379536e5a-build.zip"
+          "S3Key": "amplify-builds/handsfunction-4b5536484238376f6f65-build.zip"
         }
       }
     },
